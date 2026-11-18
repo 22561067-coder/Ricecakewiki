@@ -1,0 +1,195 @@
+.tteok-home {
+  --ink: #332c25;
+  --muted: #675c51;
+  --line: #e8dfd4;
+  min-height: 100vh;
+  color: var(--ink);
+  background: #faf8f5;
+}
+
+.tteok-home .hero {
+  margin: 0;
+  padding: clamp(48px, 8vw, 92px) 20px;
+  background: #eadbc8;
+  border-bottom: 1px solid #e1cfb7;
+  text-align: center;
+}
+
+.tteok-home .hero h1 {
+  margin: 0;
+  font-size: clamp(26px, 4.5vw, 44px);
+  line-height: 1.2;
+  letter-spacing: -0.055em;
+  word-break: keep-all;
+}
+
+.tteok-home .hero p {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: clamp(14px, 2vw, 17px);
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+.tteok-home .slider-wrapper {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 14px 8px;
+  width: min(1080px, calc(100% - 48px));
+  margin: clamp(36px, 6vw, 64px) auto 0;
+}
+
+.tteok-home .section-header {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  padding-inline: 84px;
+  text-align: center;
+}
+
+.tteok-home .section-header h2 {
+  margin: 0;
+  font-size: clamp(20px, 3vw, 26px);
+  letter-spacing: -0.04em;
+}
+
+.tteok-home .section-header p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+  word-break: keep-all;
+}
+
+.tteok-home .grid {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 2px 2px 12px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: #c9b49b transparent;
+}
+
+.tteok-home .slide-btn {
+  z-index: 1;
+  grid-row: 1;
+  justify-self: end;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid #d9c7b3;
+  border-radius: 50%;
+  background: #fffdf9;
+  color: #59422d;
+  font-size: 19px;
+  cursor: pointer;
+}
+
+.tteok-home .slide-btn.left { grid-column: 2; }
+.tteok-home .slide-btn.right { grid-column: 3; }
+
+.tteok-home .product-wrapper {
+  flex: 0 0 clamp(172px, 26vw, 248px);
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.tteok-home .product-card,
+.tteok-home .product-card:hover {
+  width: auto;
+  min-width: 0;
+  height: auto;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 2px 5px #332c2508;
+  transform: none;
+  cursor: default;
+}
+
+.tteok-home .product-img {
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: #eee5da;
+}
+
+.tteok-home .product-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tteok-home .product-info {
+  padding: 14px 16px 16px;
+}
+
+.tteok-home .product-info h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.4;
+  letter-spacing: -0.035em;
+}
+
+.tteok-home .product-info p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.tteok-home .outside-btn {
+  width: 100%;
+  min-height: 40px;
+  margin-top: 8px;
+  padding: 8px 12px;
+  border: 1px solid #e0cdb5;
+  border-radius: 9px;
+  background: #eee2d2;
+  color: #493623;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.tteok-home .slide-btn:hover,
+.tteok-home .outside-btn:hover {
+  background: #e3d0b9;
+}
+
+.tteok-home button:focus-visible {
+  outline: 2px solid #795837;
+  outline-offset: 1px;
+}
+
+.tteok-home .footer {
+  margin-top: clamp(36px, 6vw, 64px);
+  padding: 25px 16px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  text-align: center;
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  .tteok-home .slider-wrapper {
+    width: calc(100% - 32px);
+  }
+
+  .tteok-home .section-header {
+    grid-column: 1;
+    padding: 0;
+    text-align: left;
+  }
+
+  .tteok-home .grid {
+    gap: 12px;
+  }
+}
